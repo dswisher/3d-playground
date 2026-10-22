@@ -1,0 +1,15 @@
+{{ range (.ByDate.Reverse.GroupByDate "Monday, January 2, 2006") }}
+  <section class="day">
+    <h2>{{ .Key }}</h2>
+    <ul>
+      {{ range .Pages }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+          {{ with .Summary | plainify | strings.TrimSpace }}<p class="summary">{{ . | truncate 160 }}</p>{{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+{{ else }}
+  <p>No posts yet.</p>
+{{ end }}

@@ -1,0 +1,23 @@
+baseURL = 'https://dswisher.github.io/3d-playground/'
+locale = 'en-us'
+title = '3D Playground Devlog'
+timeZone = 'America/Chicago'
+
+[params]
+  description = 'Notes, successes, and failures while learning 3D game development with raylib and C#.'
+
+[permalinks]
+  [permalinks.page]
+    posts = '/posts/:year/:month/:day/:slug/'
+
+[taxonomies]
+  tag = 'tags'
+
+[markup]
+  [markup.highlight]
+    noClasses = true
+    style = 'github'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'

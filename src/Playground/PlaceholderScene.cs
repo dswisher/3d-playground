@@ -14,13 +14,16 @@ namespace Playground
             titleText = title;
         }
 
+
         public void OnEnter()
         {
         }
 
+
         public void OnExit()
         {
         }
+
 
         public void Update(SceneManager sceneManager)
         {
@@ -29,6 +32,7 @@ namespace Playground
                 sceneManager.BackOrExit();
             }
         }
+
 
         public void Draw()
         {

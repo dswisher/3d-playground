@@ -13,8 +13,10 @@ namespace Playground
         private static void Main()
         {
             Raylib.InitWindow(WindowWidth, WindowHeight, "3D Playground");
-            Raylib.SetExitKey(KeyboardKey.Null);
             Raylib.SetTargetFPS(60);
+
+            // We want to use ESC to exit child scenes, so we disable it as a global exit key
+            Raylib.SetExitKey(KeyboardKey.Null);
 
             var sceneManager = new SceneManager();
 

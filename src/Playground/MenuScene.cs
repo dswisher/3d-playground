@@ -2,7 +2,6 @@
 // Licensed under the MIT License. See LICENSE.md in the project root for license information.
 
 using System.Collections.Generic;
-
 using Raylib_cs;
 
 namespace Playground
@@ -17,6 +16,7 @@ namespace Playground
         private readonly IReadOnlyList<MenuItem> menuItems;
         private readonly string escapeLabel;
 
+
         public MenuScene(string title, IReadOnlyList<MenuItem> items, string escapeLabel = "exit")
         {
             titleText = title;
@@ -24,13 +24,16 @@ namespace Playground
             this.escapeLabel = escapeLabel;
         }
 
+
         public void OnEnter()
         {
         }
 
+
         public void OnExit()
         {
         }
+
 
         public void Update(SceneManager sceneManager)
         {
@@ -50,6 +53,7 @@ namespace Playground
             }
         }
 
+
         public void Draw()
         {
             Raylib.DrawText(titleText, LeftMargin, 40, 32, Color.RayWhite);
@@ -63,6 +67,7 @@ namespace Playground
 
             Raylib.DrawText($"ESC - {escapeLabel}", LeftMargin, FirstItemY + (menuItems.Count * ItemLineHeight), 24, Color.Gray);
         }
+
 
         private static string FormatHotkey(KeyboardKey hotkey)
         {

@@ -11,6 +11,7 @@ namespace Playground
 
         public bool ExitRequested { get; private set; }
 
+
         public void Push(IScene scene)
         {
             if (scenes.TryPeek(out var currentScene))
@@ -21,6 +22,7 @@ namespace Playground
             scenes.Push(scene);
             scene.OnEnter();
         }
+
 
         public void BackOrExit()
         {
@@ -41,6 +43,7 @@ namespace Playground
             }
         }
 
+
         public void Update()
         {
             if (scenes.TryPeek(out var currentScene))
@@ -49,6 +52,7 @@ namespace Playground
             }
         }
 
+
         public void Draw()
         {
             if (scenes.TryPeek(out var currentScene))
@@ -56,6 +60,7 @@ namespace Playground
                 currentScene.Draw();
             }
         }
+
 
         public void Shutdown()
         {

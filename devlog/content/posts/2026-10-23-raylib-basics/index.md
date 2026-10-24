@@ -33,7 +33,53 @@ while (!Raylib.WindowShouldClose() && !sceneManager.ExitRequested)
 }
 ```
 
+When the while loop exits, the app should clean up after itself.
+For a simple app, this just means closing the window:
+
+```c#
+Raylib.CloseWindow();
+```
+
+
 # Using a custom font
 
-TBD.
+Unlike monogame, fonts (and other resources) are loaded at runtime.
+No pipeline to deal with.
+The steps are basically:
+
+1. Use `LoadFontEx` to load the font
+2. Use `DrawTextEx` to draw with it
+3. When done with the font, use `UnloadFont` to release it
+
+Loading it fairly simple, but there are two things to be aware of.
+
+First, be sure to check if the font that was just loaded is actually valid.
+Second, the codepoints array, as I understand it, specifies the glyphs to load (this example uses ASCII printable characters).
+
+```c#
+var path = Path.Combine(AppContext.BaseDirectory, "assets", "fonts", "airborne2.ttf");
+var codepoints = Enumerable.Range(32, 95).ToArray();
+
+var myFont = Raylib.LoadFontEx(path, 48, codepoints, codepoints.Length);
+
+if (!Raylib.IsFontValid(myFont))
+{
+    // TODO - create an AssetLoadException or some such
+    throw new InvalidOperationException($"Font in {path} is not valid.");
+}
+```
+
+Drawing is similar to drawing with the built-in font, but uses a vector for the position, and a float for the spacing between characters (`1f` in my example):
+
+```c#
+Raylib.DrawTextEx(myFont, titleText, new Vector2(40, 40), 32f, 1f, Color.RayWhite);
+```
+
+The font needs to be accessible at runtime, so you'll want something like the following in your `.csproj` file, to copy assets to the output directory:
+
+```xml
+<ItemGroup>
+    <None Include="assets/**" CopyToOutputDirectory="PreserveNewest" />
+</ItemGroup>
+```
 

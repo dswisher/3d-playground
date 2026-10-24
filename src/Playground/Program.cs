@@ -22,6 +22,8 @@ namespace Playground
 
             try
             {
+                Fonts.Load();
+
                 sceneManager.Push(new MenuScene("3D Playground", new MenuItem[]
                 {
                     new("child scene 1", KeyboardKey.One, () => new PlaceholderScene("Child scene 1")),
@@ -41,6 +43,7 @@ namespace Playground
             finally
             {
                 sceneManager.Shutdown();
+                Fonts.Unload();
                 Raylib.CloseWindow();
             }
         }

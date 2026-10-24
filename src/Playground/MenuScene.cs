@@ -2,6 +2,7 @@
 // Licensed under the MIT License. See LICENSE.md in the project root for license information.
 
 using System.Collections.Generic;
+using System.Numerics;
 using Raylib_cs;
 
 namespace Playground
@@ -56,16 +57,16 @@ namespace Playground
 
         public void Draw()
         {
-            Raylib.DrawText(titleText, LeftMargin, 40, 32, Color.RayWhite);
+            Raylib.DrawTextEx(Fonts.Main, titleText, new Vector2(LeftMargin, 40), 32f, 1f, Color.RayWhite);
 
             for (var index = 0; index < menuItems.Count; index++)
             {
                 var item = menuItems[index];
                 var line = $"{FormatHotkey(item.Hotkey)} - {item.Label}";
-                Raylib.DrawText(line, LeftMargin, FirstItemY + (index * ItemLineHeight), 24, Color.RayWhite);
+                Raylib.DrawTextEx(Fonts.Main, line, new Vector2(LeftMargin, FirstItemY + index * ItemLineHeight), 24f, 1f, Color.RayWhite);
             }
 
-            Raylib.DrawText($"ESC - {escapeLabel}", LeftMargin, FirstItemY + (menuItems.Count * ItemLineHeight), 24, Color.Gray);
+            Raylib.DrawTextEx(Fonts.Main, $"ESC - {escapeLabel}", new Vector2(LeftMargin, FirstItemY + (menuItems.Count + 1) * ItemLineHeight), 24f, 1f, Color.Gray);
         }
 
 

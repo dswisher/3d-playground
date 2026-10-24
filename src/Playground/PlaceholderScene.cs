@@ -1,6 +1,7 @@
 // Copyright (c) Doug Swisher. All Rights Reserved.
 // Licensed under the MIT License. See LICENSE.md in the project root for license information.
 
+using System.Numerics;
 using Raylib_cs;
 
 namespace Playground
@@ -36,8 +37,8 @@ namespace Playground
 
         public void Draw()
         {
-            Raylib.DrawText(titleText, 40, 40, 32, Color.RayWhite);
-            Raylib.DrawText("ESC - back", 40, 100, 24, Color.Gray);
+            Raylib.DrawTextEx(Fonts.Main, titleText, new Vector2(40, 40), 32f, 1f, Color.RayWhite);
+            Raylib.DrawTextEx(Fonts.Main, "ESC - back", new Vector2(40, 100), 24f, 1f, Color.RayWhite);
         }
     }
 }

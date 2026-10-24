@@ -16,5 +16,5 @@ Someday, the [devlog](https://dswisher.github.io/3d-playground/) will have some 
 
 ### Fonts
 
-* [Airborne II Font](https://www.fontspace.com/airborne-font-f9345), by [Charles Casimiro](https://www.fontspace.com/charles-casimiro-design)
+* [Ancizar Sans Regular](https://www.fontspace.com/ancizar-sans-font-f171406) - [Copyright 2014 The Ancizar Sans Project Authors](https://github.com/UNAL-OMD/UNAL-Ancizar) - [SIL Open Font License, Version 1.1](https://openfontlicense.org)
 

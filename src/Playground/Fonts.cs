@@ -29,7 +29,7 @@ namespace Playground
 
         public static void Load()
         {
-            var path = Path.Combine(AppContext.BaseDirectory, "assets", "fonts", "airborne2.ttf");
+            var path = Path.Combine(AppContext.BaseDirectory, "assets", "fonts", "ancizar-sans.ttf");
             var codepoints = Enumerable.Range(32, 95).ToArray();
 
             var loaded = Raylib.LoadFontEx(path, 48, codepoints, codepoints.Length);

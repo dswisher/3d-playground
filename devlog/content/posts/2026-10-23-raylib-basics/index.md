@@ -57,7 +57,7 @@ First, be sure to check if the font that was just loaded is actually valid.
 Second, the codepoints array, as I understand it, specifies the glyphs to load (this example uses ASCII printable characters).
 
 ```c#
-var path = Path.Combine(AppContext.BaseDirectory, "assets", "fonts", "airborne2.ttf");
+var path = Path.Combine(AppContext.BaseDirectory, "assets", "fonts", "ancizar-sans.ttf");
 var codepoints = Enumerable.Range(32, 95).ToArray();
 
 var myFont = Raylib.LoadFontEx(path, 48, codepoints, codepoints.Length);

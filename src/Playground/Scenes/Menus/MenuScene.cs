@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Numerics;
 using Raylib_cs;
 
-namespace Playground
+namespace Playground.Scenes.Menus
 {
-    internal sealed class MenuScene : IScene
+    public sealed class MenuScene : IScene
     {
         private const int LeftMargin = 40;
         private const int FirstItemY = 120;

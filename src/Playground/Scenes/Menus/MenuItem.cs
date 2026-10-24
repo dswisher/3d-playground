@@ -2,10 +2,9 @@
 // Licensed under the MIT License. See LICENSE.md in the project root for license information.
 
 using System;
-
 using Raylib_cs;
 
-namespace Playground
+namespace Playground.Scenes.Menus
 {
-    internal sealed record MenuItem(string Label, KeyboardKey Hotkey, Func<IScene> CreateScene);
+    public sealed record MenuItem(string Label, KeyboardKey Hotkey, Func<IScene> CreateScene);
 }

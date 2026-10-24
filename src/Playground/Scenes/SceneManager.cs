@@ -3,9 +3,9 @@
 
 using System.Collections.Generic;
 
-namespace Playground
+namespace Playground.Scenes
 {
-    internal sealed class SceneManager
+    public sealed class SceneManager
     {
         private readonly Stack<IScene> scenes = new();
 

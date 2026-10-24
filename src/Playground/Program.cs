@@ -1,16 +1,18 @@
 // Copyright (c) Doug Swisher. All Rights Reserved.
 // Licensed under the MIT License. See LICENSE.md in the project root for license information.
 
+using Playground.Scenes;
+using Playground.Scenes.Menus;
 using Raylib_cs;
 
 namespace Playground
 {
-    internal static class Program
+    public static class Program
     {
         private const int WindowWidth = 1280;
         private const int WindowHeight = 720;
 
-        private static void Main()
+        public static void Main()
         {
             Raylib.InitWindow(WindowWidth, WindowHeight, "3D Playground");
             Raylib.SetTargetFPS(60);
@@ -24,11 +26,7 @@ namespace Playground
             {
                 Fonts.Load();
 
-                sceneManager.Push(new MenuScene("3D Playground", new MenuItem[]
-                {
-                    new("child scene 1", KeyboardKey.One, () => new PlaceholderScene("Child scene 1")),
-                    new("child scene 2", KeyboardKey.Two, () => new PlaceholderScene("Child scene 2")),
-                }));
+                sceneManager.Push(MenuBuilder.BuildMainMenu());
 
                 while (!Raylib.WindowShouldClose() && !sceneManager.ExitRequested)
                 {

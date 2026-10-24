@@ -4,9 +4,9 @@
 using System.Numerics;
 using Raylib_cs;
 
-namespace Playground
+namespace Playground.Scenes.Menus
 {
-    internal sealed class PlaceholderScene : IScene
+    public sealed class PlaceholderScene : IScene
     {
         private readonly string titleText;
 

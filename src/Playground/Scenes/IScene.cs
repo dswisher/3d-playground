@@ -1,9 +1,9 @@
 // Copyright (c) Doug Swisher. All Rights Reserved.
 // Licensed under the MIT License. See LICENSE.md in the project root for license information.
 
-namespace Playground
+namespace Playground.Scenes
 {
-    internal interface IScene
+    public interface IScene
     {
         void OnEnter();
 

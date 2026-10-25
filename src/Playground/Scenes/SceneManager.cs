@@ -2,6 +2,7 @@
 // Licensed under the MIT License. See LICENSE.md in the project root for license information.
 
 using System.Collections.Generic;
+using Raylib_cs;
 
 namespace Playground.Scenes
 {
@@ -57,7 +58,12 @@ namespace Playground.Scenes
         {
             if (scenes.TryPeek(out var currentScene))
             {
+                Raylib.BeginDrawing();
+                Raylib.ClearBackground(currentScene.BackgroundColor);
+
                 currentScene.Draw();
+
+                Raylib.EndDrawing();
             }
         }
 

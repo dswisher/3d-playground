@@ -1,6 +1,7 @@
 // Copyright (c) Doug Swisher. All Rights Reserved.
 // Licensed under the MIT License. See LICENSE.md in the project root for license information.
 
+using System;
 using Playground.Scenes;
 using Playground.Scenes.Menus;
 using Raylib_cs;
@@ -32,11 +33,13 @@ namespace Playground
                 {
                     sceneManager.Update();
 
-                    Raylib.BeginDrawing();
-                    Raylib.ClearBackground(Color.Black);
                     sceneManager.Draw();
-                    Raylib.EndDrawing();
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Unhandled exception in main.");
+                Console.WriteLine(ex);
             }
             finally
             {

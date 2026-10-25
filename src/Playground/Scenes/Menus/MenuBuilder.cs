@@ -22,7 +22,7 @@ namespace Playground.Scenes.Menus
             return new MenuScene("Drawing 3D Objects", new MenuItem[]
             {
                 new("Drawing a 3D Primitive", KeyboardKey.One, () => new Draw3DPrimitiveScene())
-            });
+            }, "back");
         }
     }
 }

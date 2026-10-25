@@ -1,15 +1,16 @@
 +++
-date = '2026-10-23T08:30:05-05:00'
+date = '2026-10-23T08:30:00-05:00'
 draft = false
 title = 'raylib Basics'
 slug = 'raylib-basics'
-tags = []
+tags = ['LoadFontEx', 'DrawTextEx']
 +++
 
-# Main Structure
 
-This is intended to be a sort of cheat-sheet, mainly for myself, on how to do some of the basic things with [raylib](https://www.raylib.com/).
+This is intended to be a sort of cheat-sheet, mainly for myself, on how to do some of the very basic things with [raylib](https://www.raylib.com/).
 The info is almost certainly available elsewhere, but by writing it down in my own style, it helps me remember.
+
+# Main Structure
 
 The main raylib program is pretty typical.
 There is some initialization code:
@@ -82,4 +83,6 @@ The font needs to be accessible at runtime, so you'll want something like the fo
     <None Include="assets/**" CopyToOutputDirectory="PreserveNewest" />
 </ItemGroup>
 ```
+
+I put the font handling code in a [Fonts class](https://github.com/dswisher/3d-playground/blob/d9bd2023f00ee8202f66beb58db8a34c4d2da8be/src/Playground/Fonts.cs).
 

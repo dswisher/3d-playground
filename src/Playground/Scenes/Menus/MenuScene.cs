@@ -7,7 +7,7 @@ using Raylib_cs;
 
 namespace Playground.Scenes.Menus
 {
-    public sealed class MenuScene : IScene
+    public sealed class MenuScene : AbstractScene
     {
         private const int LeftMargin = 40;
         private const int FirstItemY = 120;
@@ -26,17 +26,7 @@ namespace Playground.Scenes.Menus
         }
 
 
-        public void OnEnter()
-        {
-        }
-
-
-        public void OnExit()
-        {
-        }
-
-
-        public void Update(SceneManager sceneManager)
+        public override void Update(SceneManager sceneManager)
         {
             if (Raylib.IsKeyPressed(KeyboardKey.Escape))
             {
@@ -55,7 +45,7 @@ namespace Playground.Scenes.Menus
         }
 
 
-        public void Draw()
+        public override void Draw()
         {
             Raylib.DrawTextEx(Fonts.Main, titleText, new Vector2(LeftMargin, 40), 32f, 1f, Color.RayWhite);
 

@@ -1,16 +1,16 @@
 # 3D Playground
 
-This is my experiments with 3D, with the intent of using [raylib](https://www.raylib.com/) (but that is subject to change).
+3D Playground is a hands-on project for learning 3D programming with [raylib](https://www.raylib.com/) and its C# binding, raylib-cs.
+I’m using small experiments to understand cameras, coordinate systems, meshes, lighting, shaders, and other 3D fundamentals, with the longer-term goal of applying those skills to a game.
 
-I want a place to experiment freely with code, 3D modelling, etc.
-
-Someday, the [devlog](https://dswisher.github.io/3d-playground/) will have some content worth reading.
+This is a learning project rather than a game: each experiment is a chance to try a concept, see how it behaves, and record what I learned in the [devlog](https://dswisher.github.io/3d-playground/).
 
 
 ## Links
 
 * [raylib](https://www.raylib.com/) - [github](https://github.com/raysan5/raylib) - the library I'm using
-* [raylib-cs](https://github.com/raylib-cs/raylib-cs) - the C# binding
+* [raylib-cs](https://github.com/raylib-cs/raylib-cs) - the C# binding for raylib
+
 
 ## Credits
 

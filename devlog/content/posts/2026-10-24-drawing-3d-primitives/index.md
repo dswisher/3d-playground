@@ -3,7 +3,7 @@ date = '2026-10-24T10:15:00-05:00'
 draft = false
 title = 'Drawing 3D Primitives'
 slug = 'drawing-3d-primitives'
-tags = []
+tags = ['BeginMode3D', 'EndMode3D', 'DrawCube', 'DrawSphere', 'DrawCylinder', 'Camera3D']
 +++
 
 Working through an example to draw 3D cube, sphere, and cylinder, and how to use a camera object to view them.
@@ -66,18 +66,20 @@ camera = new()
 With orthographic projection, camera distance doesn’t change apparent size; FovY sets the vertical view span.
 Position still determines the viewpoint and framing.
 
-TBD - add details on the coordinate system
+For reference, I put together a little diagram showing the coordinate system.
+
+![Raylib 3D axes showing pitch, yaw, and roll](coordinate-system-yaw-pitch-roll.png)
 
 
 # Moving the Camera
 
 Moving the camera turned out to be the hard part, at least for me.
 To simply "move", the `Position` and `Target` need to change by the same amount.
-If only `Position` is change (but not `Target`), then you are "orbiting" (which is useful, but not what I wanted).
+Changing `Position` while keeping `Target` fixed changes the camera’s view direction; it’s orbiting when you move around the target.
 
 The other surprise was that movement needs to be relative to the camera orientation.
 This means doing some vector math based on the camera settings, so that movement aligns with the camera.
 
-I've created a `FlyingCamera` class that handles all of this.
+I've created a [FlyingCamera](https://github.com/dswisher/3d-playground/blob/c976cdd7c40f5f59ae80bd5998abb73f0dba5fec/src/Playground/Helpers/FlyingCamera.cs) class that handles all of this.
 It is probably flawed, but it seems to be working.
 

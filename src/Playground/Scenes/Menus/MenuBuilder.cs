@@ -21,7 +21,8 @@ namespace Playground.Scenes.Menus
         {
             return new MenuScene("Drawing 3D Objects", new MenuItem[]
             {
-                new("Drawing a 3D Primitive", KeyboardKey.One, () => new Draw3DPrimitiveScene())
+                new("Drawing 3D Primitives", KeyboardKey.One, () => new Draw3DPrimitiveScene()),
+                new("Drawing a Blender Model", KeyboardKey.Two, () => new HouseModelScene()),
             }, "back");
         }
     }

@@ -32,9 +32,48 @@ There are also tutorials that walk through the process of building specific obje
 
 I roughly followed this to get a house set up.
 As of this writing, I'm only partway through, but I will continue improving the model later.
+Blender has a lot of power, and is going to take time to learn.
 
 
 # Exporting
 
-I just did "Export" and selected "glb"...
+I just did "Export" and selected "glb".
+The seems to import just fine.
+
+The only issue I see is that the roof looks totally uniform - the roof is all the same color.
+I suspect this is because it is using a "flat" rendering, as there are no lights.
+I need to dig into lighting a bit, to get it to look better (I think).
+
+Even without the lighting, the house is recognizable.
+
+
+# Rendering
+
+The rendering of the model was straightforward.
+Since I'm using my scene infrastructure, in the scene's `OnEnter` method, I loaded the model and checked it for validity:
+
+```c#
+houseModel = Raylib.LoadModel(path);
+
+if (houseModel != null && !Raylib.IsModelValid(houseModel.Value))
+{
+    throw new InvalidOperationException($"Model in {path} is not valid.");
+}
+```
+
+In the scene's `OnExit`, I unload the model:
+
+```c#
+if (houseModel != null)
+{
+    Raylib.UnloadModel(houseModel.Value);
+
+    houseModel = null;
+}
+```
+
+
+# Lighting
+
+TBD
 

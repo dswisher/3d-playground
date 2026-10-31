@@ -38,6 +38,7 @@ namespace Playground.Scenes
         public override void OnEnter()
         {
             var path = Path.Combine(AppContext.BaseDirectory, "assets", "models", "house-1.glb");
+            // var path = Path.Combine(AppContext.BaseDirectory, "assets", "models", "ship-dark.glb");
 
             houseModel = Raylib.LoadModel(path);
 

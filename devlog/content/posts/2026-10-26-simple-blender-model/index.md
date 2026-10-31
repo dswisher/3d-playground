@@ -26,6 +26,14 @@ There are a number of tutorials available on youtube:
 - [Blender Donut Tutorial (2025)](https://www.youtube.com/playlist?list=PLjEaoINr3zgGUwGwXlj9kBe7TrVWNjkyv) - by Blender Guru
 
 
+I found some playlists of practice mini-tutorials.
+I've watched the first half of the first one, and it looks useful.
+I suspect there are more of these out there.
+
+- [Beginner Exercises](https://www.youtube.com/watch?v=98FkRIbihyQ&list=PLn3ukorJv4vvv3ZpWJYvV5Tmvo7ISO-NN&index=1) by Grant Abbitt
+    - [Beginner Exercises | Part 1 | Blender 2.8 & Onwards](https://www.youtube.com/watch?v=98FkRIbihyQ) - table, chairs, etc
+
+
 There are also tutorials that walk through the process of building specific objects:
 
 - [New to Blender? Start by Building a House!](https://www.youtube.com/watch?v=Bik3Xz88yW4) by CG Geek
@@ -76,4 +84,18 @@ if (houseModel != null)
 # Lighting
 
 TBD
+
+
+# External Models
+
+I don't think I can make everything myself, so I'm going to want to be able to pull in models from other folks and use them.
+As a quick test, I found a [Spaceship Pack](https://beelim-solutions.itch.io/3d-models-spaceship-pack) by Beelim Solutions, free on itch.io.
+I downloaded it, picked one of the models and loaded it into Blender, and exported as a `.glb` file.
+
+When I tried to load that into raylib, it failed, because it had multiple skins (armatures).
+Looking back in Blender, it looks like they have two ships in one scene.
+I deleted one, re-exported, and it worked.
+
+It was huge, so I went back into Blender and scaled it down, which was easy.
+Right now, the asset is there, and I have a commented-out line in the house scene to load it instead of the house.
 

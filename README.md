@@ -18,3 +18,7 @@ This is a learning project rather than a game: each experiment is a chance to tr
 
 * [Ancizar Sans Regular](https://www.fontspace.com/ancizar-sans-font-f171406) - [Copyright 2014 The Ancizar Sans Project Authors](https://github.com/UNAL-OMD/UNAL-Ancizar) - [SIL Open Font License, Version 1.1](https://openfontlicense.org)
 
+### Models
+
+* [Beelim Solutions 3D Spaceship Pack](https://beelim-solutions.itch.io/3d-models-spaceship-pack) - ship-dark.glb - loaded shipdark.blend into Blender and then exported
+

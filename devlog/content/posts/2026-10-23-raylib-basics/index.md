@@ -52,7 +52,7 @@ The steps are basically:
 2. Use `DrawTextEx` to draw with it
 3. When done with the font, use `UnloadFont` to release it
 
-Loading it fairly simple, but there are two things to be aware of.
+Loading it is fairly simple, but there are two things to be aware of.
 
 First, be sure to check if the font that was just loaded is actually valid.
 Second, the codepoints array, as I understand it, specifies the glyphs to load (this example uses ASCII printable characters).
@@ -76,6 +76,9 @@ Drawing is similar to drawing with the built-in font, but uses a vector for the 
 Raylib.DrawTextEx(myFont, titleText, new Vector2(40, 40), 32f, 1f, Color.RayWhite);
 ```
 
+**NOTE**: This example uses `1f` for the `spacing` parameter.
+In experimenting, the text looks better with a value of `0f`.
+
 The font needs to be accessible at runtime, so you'll want something like the following in your `.csproj` file, to copy assets to the output directory:
 
 ```xml
@@ -85,4 +88,8 @@ The font needs to be accessible at runtime, so you'll want something like the fo
 ```
 
 I put the font handling code in a [Fonts class](https://github.com/dswisher/3d-playground/blob/d9bd2023f00ee8202f66beb58db8a34c4d2da8be/src/Playground/Fonts.cs).
+
+I read somewhere that loading the font at a large font size and then scaling it down would give the best results.
+I found that not to be the case.
+The rendering looks *much* better if the font is loaded at the same font at which it will be rendered.
 
